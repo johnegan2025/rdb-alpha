@@ -3,7 +3,7 @@
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
 echo "Enter your username:"
-read USERNAME
+read -r USERNAME
 
 # Get existing user information
 USER_INFO=$($PSQL "SELECT games_played, best_game FROM users WHERE username='$USERNAME'")
