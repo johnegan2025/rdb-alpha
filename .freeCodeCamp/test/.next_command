@@ -1,0 +1,2 @@
+cd /workspace/project/number_guessing_game
+git push -u origin main
