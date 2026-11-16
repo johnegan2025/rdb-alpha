@@ -24,14 +24,14 @@ SECRET_NUMBER=$(( RANDOM % 1000 + 1 ))
 NUMBER_OF_GUESSES=0
 
 echo "Guess the secret number between 1 and 1000:"
-read GUESS
+read -r GUESS
 
 while true
 do
   if ! [[ $GUESS =~ ^-?[0-9]+$ ]]
   then
     echo "That is not an integer, guess again:"
-    read GUESS
+    read -r GUESS
     continue
   fi
 
@@ -40,11 +40,11 @@ do
   if [[ $GUESS -lt $SECRET_NUMBER ]]
   then
     echo "It's higher than that, guess again:"
-    read GUESS
+    read -r GUESS
   elif [[ $GUESS -gt $SECRET_NUMBER ]]
   then
     echo "It's lower than that, guess again:"
-    read GUESS
+    read -r GUESS
   else
     echo "You guessed it in $NUMBER_OF_GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
     break
